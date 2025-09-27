@@ -90,7 +90,7 @@ with col2:
     st.write("📍 **Identifies and monitors coordinated disinformation campaigns on Platform X.**")
     st.write("📍 **Supports efforts to maintain information integrity online.**")
 st.divider()
-lottie_intro2 = load_lottiefile(r"C:\Users\KENT LEE\Documents\TA KENT 2025\assets\intro2.json")
+lottie_intro2 = load_lottiefile("assets/intro2.json")
 col1, col2 = st.columns((2))
 with col1:
     st.markdown("<br><br><br><br>", unsafe_allow_html=True)
