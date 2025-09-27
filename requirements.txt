@@ -1,4 +1,5 @@
 googletrans==4.0.0rc1
+httpx
 imbalanced_learn==0.13.0
 imblearn==0.0
 matplotlib
