@@ -66,7 +66,7 @@ def load_lottieurl(url: str):
 st.title(" 📢 Introduction")
 st.markdown('<style>div.block-container{padding-top:2.5rem;}</style>',unsafe_allow_html=True)
 
-lottie_intro = load_lottiefile(r"C:\Users\KENT LEE\Documents\TA KENT 2025\assets\intro.json")
+lottie_intro = load_lottiefile("assets/intro.json")
 col1, col2 = st.columns((2))
 with col1:
     st_lottie(
