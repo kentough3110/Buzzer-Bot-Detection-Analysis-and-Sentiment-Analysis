@@ -16,3 +16,4 @@ streamlit==1.43.2
 streamlit_lottie==0.0.5
 tensorflow==2.20.0
 wordcloud==1.9.4
+openpyxl
