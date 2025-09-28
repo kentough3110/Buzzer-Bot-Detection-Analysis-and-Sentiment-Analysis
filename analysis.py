@@ -853,7 +853,7 @@ def main():
                 # Show model architecture
                 col1, col2 = st.columns((2))
                 with col1:
-                    image = Image.open("views/model_structure.png")
+                    image = Image.open("model_structure.png")
                     st.image(image, caption='Model Structure', use_container_width=True)
                 
                 st.header("Evaluation & Testing", divider='blue')
