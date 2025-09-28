@@ -55,30 +55,30 @@ nltk.download('vader_lexicon')
 stop_words = set(stopwords.words('indonesian'))
 
 # Load kamus kata tidak baku
-kamus_data = pd.read_excel(r"C:\Users\KENT LEE\Documents\TA KENT 2025\lexicon\kamuskatabaku.xlsx")
+kamus_data = pd.read_excel("lexicon/kamuskatabaku.xlsx")
 kamus_tidak_baku = dict(zip(kamus_data['kata_tidak_baku'], kamus_data['kata_baku']))
 
 # Load leksikon INSET
-leksikon_df = pd.read_csv(r"C:\Users\KENT LEE\Documents\TA KENT 2025\lexicon\lexiconfull.csv")
+leksikon_df = pd.read_csv("lexicon/lexiconfull.csv")
 lexicon_positive = {row['word']: int(row['weight']) for _, row in leksikon_df[leksikon_df['weight'] > 0].iterrows()}
 lexicon_negative = {row['word']: int(row['weight']) for _, row in leksikon_df[leksikon_df['weight'] < 0].iterrows()}
 
 # Load the fitted TF-IDF vectorizer
-with open(r"C:\Users\KENT LEE\Documents\TA KENT 2025\views\tfidf_vectorizer_inset.pkl", "rb") as file:
+with open("views/tfidf_vectorizer_inset.pkl", "rb") as file:
     tfidf_inset = pickle.load(file)
-with open(r"C:\Users\KENT LEE\Documents\TA KENT 2025\views\tfidf_vectorizer_vader.pkl", "rb") as file:
+with open("views/tfidf_vectorizer_vader.pkl", "rb") as file:
     tfidf_vader = pickle.load(file)
 # Load the Tokenizer
-with open(r"C:\Users\KENT LEE\Documents\TA KENT 2025\views\tokenizer.pkl", "rb") as file:
+with open("views/tokenizer.pkl", "rb") as file:
     tokenizer = pickle.load(file)
 
 # Load trained models
-with open(r"C:\Users\KENT LEE\Documents\TA KENT 2025\views\ml_models_inset.pkl", "rb") as file:
+with open("views/ml_models_inset.pkl", "rb") as file:
     models_inset = pickle.load(file)
-with open(r"C:\Users\KENT LEE\Documents\TA KENT 2025\views\ml_models_vader.pkl", "rb") as file:
+with open("views/ml_models_vader.pkl", "rb") as file:
     models_vader = pickle.load(file)
 # LSTM
-model_lstm = tf.keras.models.load_model(r"C:\Users\KENT LEE\Documents\TA KENT 2025\views\lstm_model.keras")
+model_lstm = tf.keras.models.load_model("views/lstm_model.keras")
 
 # Inisialisasi Stemmer
 factory = StemmerFactory()
@@ -277,7 +277,7 @@ def preprocess_and_predict(text, option, option_algo):
 #         time.sleep(5)
 
 st.markdown("**Using machine learning classification algorithm and deep learning algorithm which are SVM, Random Forest, and LSTM to detect buzzer or real user on X**")
-st.image(r"C:\Users\KENT LEE\Documents\TA KENT 2025\views\xbanner.jpg", width=700)
+st.image("views/xbanner.jpg", width=700)
 
 # Instruksi untuk user
 st.write("**Instructions:**")

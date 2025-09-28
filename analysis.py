@@ -48,7 +48,7 @@ def load_data(filename=None):
     if filename is not None:
         df = pd.read_excel(filename)
     else:
-        os.chdir(r"C:\Users\KENT LEE\Documents\TA KENT 2025")
+        #os.chdir(r"C:\Users\KENT LEE\Documents\TA KENT 2025")
         df = pd.read_excel("doktifall.xlsx")
     return df
 
@@ -211,7 +211,7 @@ def show_preprocessing(df):
     st.write(df[['cleaning', 'case_folding']].head(5))
     
     st.subheader("Normalization")  
-    kamus_data = pd.read_excel(r"C:\Users\KENT LEE\Documents\TA KENT 2025\lexicon\kamuskatabaku.xlsx")
+    kamus_data = pd.read_excel("lexicon/kamuskatabaku.xlsx")
     kamus_tidak_baku = dict(zip(kamus_data['kata_tidak_baku'], kamus_data['kata_baku']))
     df['normalization'] = df['case_folding'].apply(lambda x: normalize_text(x, kamus_tidak_baku))
     st.write(df[['case_folding', 'normalization']].head(5))
@@ -256,7 +256,7 @@ def show_inset_lexicon_analysis(df):
     st.header("InSet Lexicon", divider='blue') 
     st.subheader("Labelling") 
     
-    leksikon_df = pd.read_csv(r"C:\Users\KENT LEE\Documents\TA KENT 2025\lexicon\lexiconfull.csv")
+    leksikon_df = pd.read_csv("lexicon/lexiconfull.csv")
     lexicon_positive = {row['word']: int(row['weight']) for _, row in leksikon_df[leksikon_df['weight'] > 0].iterrows()}
     lexicon_negative = {row['word']: int(row['weight']) for _, row in leksikon_df[leksikon_df['weight'] < 0].iterrows()}
 
@@ -854,7 +854,7 @@ def main():
                 # Show model architecture
                 col1, col2 = st.columns((2))
                 with col1:
-                    image = Image.open(r"C:\Users\KENT LEE\Documents\TA KENT 2025\views\model_structure.png")
+                    image = Image.open("views/model_structure.png")
                     st.image(image, caption='Model Structure', use_container_width=True)
                 
                 st.header("Evaluation & Testing", divider='blue')
