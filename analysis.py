@@ -225,11 +225,11 @@ def show_preprocessing(df):
     st.write(df[['tokenization', 'stopword_removal']].head(5))
     
     st.subheader("Stemming")  
-    df = pd.read_csv(r"C:\Users\KENT LEE\Documents\TA KENT 2025\doktif_after_preprocessing.csv", encoding="ISO-8859-1")
+    df = pd.read_csv("dataDoktif/doktif_after_preprocessing.csv", encoding="ISO-8859-1")
     st.write(df[['stopword_removal', 'stemming_data']].head(5))
 
     st.subheader("English Translation")  
-    df = pd.read_csv(r"C:\Users\KENT LEE\Documents\TA KENT 2025\doktif_after_preprocessing.csv", encoding="ISO-8859-1")
+    df = pd.read_csv("dataDoktif/doktif_after_preprocessing.csv", encoding="ISO-8859-1")
     st.write(df[['stemming_data', 'eng_translation']].head(5))
     
     return df
