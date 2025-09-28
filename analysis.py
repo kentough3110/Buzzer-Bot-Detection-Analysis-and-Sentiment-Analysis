@@ -48,8 +48,7 @@ def load_data(filename=None):
     if filename is not None:
         df = pd.read_excel(filename)
     else:
-        #os.chdir(r"C:\Users\KENT LEE\Documents\TA KENT 2025")
-        df = pd.read_excel("doktifall.xlsx")
+        df = pd.read_excel("dataDoktif/doktifall.xlsx")
     return df
 
 def preprocess_datetime(df):
